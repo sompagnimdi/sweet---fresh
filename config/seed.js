@@ -43,7 +43,7 @@ const Item = require('../models/item');
     {name: 'Beer', emoji: '🍺', category: categories[6], price: 3.95},
     {name: 'Wine', emoji: '🍷', category: categories[6], price: 7.95},
     {name: 'Paincake', emoji: 'paincake', category: categories[3], price: 7.95},
-    {name: 'Omelette', emoji: 'frie egg', category: categories[3], price: 1.250 FCFA},
+    {name: 'Omelette', emoji: 'frie egg', category: categories[3], price: 1.250},
   ]);
 
   console.log(items)

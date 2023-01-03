@@ -1,6 +1,9 @@
-// /config/ensureLoggedIn.js
-module.exports = (req, res, next) => {
-    if (!req.user) return res.status(401).json('Unauthorized')
-    next()
-  };
-  
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URI);
+
+const db = mongoose.connection;
+
+db.on('connected', function () {
+  console.log(`Connected to ${db.name} at ${db.host}:${db.port}`);
+});
