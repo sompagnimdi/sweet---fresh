@@ -11,7 +11,7 @@ const Item = require('../models/item');
     {name: 'Sandwiches', sortOrder: 10},
     {name: 'Seafood', sortOrder: 20},
     {name: 'Mexican', sortOrder: 30},
-    {name: 'Breakfast', sortOrder: 40},
+    {name: 'Italian', sortOrder: 40},
     {name: 'Sides', sortOrder: 50},
     {name: 'Desserts', sortOrder: 60},
     {name: 'Drinks', sortOrder: 70},
@@ -21,15 +21,14 @@ const Item = require('../models/item');
   const items = await Item.create([
     {name: 'Hamburger', emoji: '🍔', category: categories[0], price: 5.95},
     {name: 'Turkey Sandwich', emoji: '🥪', category: categories[0], price: 6.95},
-    {name: 'Merguez', emoji: 'Merguez', category: categories[3], price: 3.95},
+    {name: 'Hot Dog', emoji: '🌭', category: categories[0], price: 3.95},
     {name: 'Crab Plate', emoji: '🦀', category: categories[1], price: 14.95},
     {name: 'Fried Shrimp', emoji: '🍤', category: categories[1], price: 13.95},
     {name: 'Whole Lobster', emoji: '🦞', category: categories[1], price: 25.95},
     {name: 'Taco', emoji: '🌮', category: categories[2], price: 1.95},
-    {name: 'Shawarma', emoji: '🌯', category: categories[2], price: 4.95},
+    {name: 'Burrito', emoji: '🌯', category: categories[2], price: 4.95},
     {name: 'Pizza Slice', emoji: '🍕', category: categories[3], price: 3.95},
     {name: 'Spaghetti', emoji: '🍝', category: categories[3], price: 7.95},
-    {name: 'Pain au Chocolat', emoji: 'chocolat bread', category: categories[6], price: 7.95},
     {name: 'Garlic Bread', emoji: '🍞', category: categories[3], price: 1.95},
     {name: 'French Fries', emoji: '🍟', category: categories[4], price: 2.95},
     {name: 'Green Salad', emoji: '🥗', category: categories[4], price: 3.95},
@@ -42,8 +41,6 @@ const Item = require('../models/item');
     {name: 'Mai Tai', emoji: '🍹', category: categories[6], price: 8.95},
     {name: 'Beer', emoji: '🍺', category: categories[6], price: 3.95},
     {name: 'Wine', emoji: '🍷', category: categories[6], price: 7.95},
-    {name: 'Paincake', emoji: 'paincake', category: categories[3], price: 7.95},
-    {name: 'Omelette', emoji: 'frie egg', category: categories[3], price: 1.250},
   ]);
 
   console.log(items)
@@ -51,4 +48,3 @@ const Item = require('../models/item');
   process.exit();
 
 })();
-

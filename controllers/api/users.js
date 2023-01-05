@@ -12,21 +12,10 @@ const checkToken = (req, res) => {
 const dataController = {
   async create (req, res, next) {
     try {
-      console.log('Enter create')
-      //const user = await User.create(req.body
-      let user = new User(req.body)
-
+      const user = await User.create(req.body)
       console.log(req.body)
-      console.log(user)
-
-      console.log('doc created')
-      user = await user.save()
-
-      console.log('user created')
       // token will be a string
       const token = createJWT(user)
-
-      console.log('jwt token created')
       // send back the token as a string
       // which we need to account for
       // in the client
@@ -34,7 +23,7 @@ const dataController = {
       res.locals.data.token = token
       next()
     } catch (e) {
-      console.log(e)
+      console.log('you got a database problem')
       res.status(400).json(e)
     }
   },
@@ -75,3 +64,4 @@ function createJWT (user) {
     { expiresIn: '24h' }
   )
 }
+
