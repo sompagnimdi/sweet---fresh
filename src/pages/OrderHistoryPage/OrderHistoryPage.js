@@ -11,12 +11,12 @@ export default function OrderHistoryPage({ user, setUser }) {
   /*--- State --- */
   const [orders, setOrders] = useState([]);
   const [activeOrder, setActiveOrder] = useState(null);
-
+  console.log(orders)
   /*--- Side Effects --- */
   useEffect(function () {
     // Load previous orders (paid)
     async function fetchOrderHistory() {
-      const orders = await ordersAPI.getOrderHistory();
+      const orders = await ordersAPI.getOrderHistory(user);
       setOrders(orders);
       // If no orders, activeOrder will be set to null below
       setActiveOrder(orders[0] || null);

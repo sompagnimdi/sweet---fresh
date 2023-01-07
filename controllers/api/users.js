@@ -57,11 +57,13 @@ module.exports = {
 /* -- Helper Functions -- */
 
 function createJWT (user) {
-  return jwt.sign(
-    // data payload
-    { user },
-    process.env.SECRET,
-    { expiresIn: '24h' }
-  )
-}
+  
+  return jwt.sign({ user }, process.env.SECRET, { allowInsecureKeySizes: true, expiresIn: '24h' })
+//   return jwt.sign(
+//     // data payload
+//     { user },
+//     process.env.SECRET,
+//     { expiresIn: '24h' }
+//   )
+ }
 

@@ -55,6 +55,7 @@ async function checkout(req, res) {
 // Return the logged in user's paid order history
 async function history(req, res) {
   // Sort most recent orders first
+  console.log(req)
   try{
     const orders = await Order
       .find({ user: req.user._id, isPaid: true })
